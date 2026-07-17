@@ -1,11 +1,11 @@
-package org.example;
+package org.example.complaint;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Main {
+public class ComplaintApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
+        SpringApplication.run(ComplaintApplication.class, args);
     }
 }

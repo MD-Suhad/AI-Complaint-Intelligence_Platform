@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/complaintsdb
-    username: ai_user
-    password: ai_pass
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://postgres:5432/complaintsdb}
+    username: ${SPRING_DATASOURCE_USERNAME:ai_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:ai_pass}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
