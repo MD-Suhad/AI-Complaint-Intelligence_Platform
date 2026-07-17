@@ -38,6 +38,8 @@ services:
       context: ./frontend
     ports:
       - '4173:4173'
+    environment:
+      BACKEND_URL: http://complaint-service:8080
     depends_on:
       - complaint-service
 

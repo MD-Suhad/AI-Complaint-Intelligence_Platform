@@ -4,47 +4,61 @@
   padding: 32px;
   font-family: Inter, system-ui, sans-serif;
   color: #0f172a;
-  background: #f8fafc;
+  background: #f4f7ff;
   box-sizing: border-box;
 }
 
 .login-panel,
 .dashboard-header,
 .dashboard-summary,
-.complaint-table {
+.complaint-table,
+.create-complaint-card {
   max-width: 960px;
   margin: 0 auto 24px;
 }
 
-.login-panel {
+.login-panel,
+.create-complaint-card,
+.complaint-table table {
   background: #ffffff;
   border-radius: 18px;
-  padding: 32px;
   box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
 }
 
-.login-panel h1 {
+.login-panel {
+  padding: 32px;
+}
+
+.login-panel h1,
+.create-complaint-card h2 {
   margin: 0 0 10px;
   font-size: 2rem;
 }
 
-.login-panel p {
+.login-panel p,
+.create-complaint-card p {
   margin: 0 0 24px;
   color: #475569;
 }
 
-.login-panel form {
+.login-panel form,
+.create-complaint-form {
   display: grid;
   gap: 16px;
 }
 
-.login-panel label {
+.login-panel label,
+.create-complaint-form label {
   display: grid;
   gap: 8px;
   font-weight: 600;
 }
 
-.login-panel input {
+.login-panel input,
+.create-complaint-form input,
+.create-complaint-form textarea,
+.complaint-table select {
+  width: 100%;
   padding: 12px 14px;
   border: 1px solid #cbd5e1;
   border-radius: 12px;
@@ -63,6 +77,11 @@ button,
 button {
   background: #2563eb;
   color: white;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
 .button-secondary {
@@ -86,15 +105,12 @@ button {
 
 .dashboard-summary {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 18px;
 }
 
 .summary-card {
-  background: white;
-  border-radius: 18px;
   padding: 24px;
-  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
 }
 
 .summary-card h2 {
@@ -107,13 +123,40 @@ button {
   font-size: 2rem;
 }
 
+.create-complaint-card {
+  padding: 32px;
+}
+
+.complaint-table {
+  padding: 24px;
+}
+
+.table-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.error-banner {
+  margin-bottom: 16px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.loading-text {
+  margin: 0;
+  padding: 16px;
+  color: #475569;
+}
+
 .complaint-table table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
 }
 
 .complaint-table th,
@@ -130,4 +173,31 @@ button {
 
 .complaint-table tr:last-child td {
   border-bottom: none;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: white;
+}
+
+.status-open {
+  background: #2563eb;
+}
+
+.status-in_progress {
+  background: #f59e0b;
+}
+
+.status-resolved {
+  background: #16a34a;
+}
+
+.status-closed {
+  background: #475569;
 }
